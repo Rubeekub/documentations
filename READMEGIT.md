@@ -89,7 +89,46 @@ git rm -r --cached -- ".vs/GestionTachesAPI"
 git commit -m "stop tracking .vs restants"
 git push origin main
 ```
-## 
+## fusionner origini et master
+### se mettre a jour en local
 ```BASH
+git fetch --all --prune
+git checkout main
+```
 
+### fusionner en autorisant les histoires non liées
+```BASH
+git merge origin/master --allow-unrelated-histories
+# Résous les conflits s'il y en a
+git commit   # si nécessaire
+git push origin main
+```
+## Tu veux remplacer complètement main par master
+```BASH
+git checkout master
+git pull
+git push origin master
+
+git checkout main
+git fetch origin
+git reset --hard origin/master
+git push --force-with-lease origin main
+```
+
+## u veux n’avoir qu’une branche par défaut (main)
+```BASH
+# Renommer localement
+git checkout master
+git branch -m main
+
+# Pousser le nouveau nom et définir l’upstream
+git push origin -u main
+
+# (Optionnel) Supprimer l’ancien nom côté remote
+git push origin --delete master
+```
+
+## Juste comparer
+```BASH
+git diff master main
 ```
