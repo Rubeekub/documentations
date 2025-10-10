@@ -19,9 +19,9 @@ git push -u origin main
 ```BASH
 git status
 git add -u
-git add DTOs/TacheCreateDto.cs DTOs/TacheUpdateDto.cs DTOs/TacheReadDto.cs -- ajout des fichiers créer
+git add nomFichier.extension nomfichier2 nomfichier3 -- ajout des fichiers créer
 git diff --cached --name-only
-git commit -m "DTOs: Create/Update/Read + mapping + contrôleur ajusté"
+git commit -m "une explication claire et detaillée pour expliquer les dernières modifications"
 git push origin main
 ```
 
@@ -132,3 +132,4 @@ git push origin --delete master
 ```BASH
 git diff master main
 ```
+
